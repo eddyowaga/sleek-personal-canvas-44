@@ -4,33 +4,33 @@ import { Progress } from "@/components/ui/progress";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Video Production",
       skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "HTML/CSS", level: 98 },
+        { name: "Video Editing", level: 95 },
+        { name: "Camera Operation", level: 90 },
+        { name: "Color Grading", level: 85 },
+        { name: "Motion Graphics", level: 80 },
+        { name: "Post-Production", level: 92 },
       ]
     },
     {
-      title: "Backend Development",
+      title: "Audio & Photography",
       skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 82 },
-        { name: "Express.js", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 },
+        { name: "Photography", level: 90 },
+        { name: "Audio Recording", level: 85 },
+        { name: "Sound Design", level: 80 },
+        { name: "Voice-Over", level: 88 },
+        { name: "Photo Editing", level: 85 },
       ]
     },
     {
-      title: "Tools & Technologies",
+      title: "Creative & Technical",
       skills: [
-        { name: "Git", level: 92 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Figma", level: 85 },
-        { name: "VS Code", level: 95 },
+        { name: "Script Writing", level: 85 },
+        { name: "Lighting Setup", level: 80 },
+        { name: "Visual Design", level: 75 },
+        { name: "Project Management", level: 82 },
+        { name: "Client Relations", level: 88 },
       ]
     }
   ];
@@ -85,26 +85,26 @@ const Skills = () => {
           {/* Tech Stack Icons */}
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-semibold mb-8 animate-fade-in">
-              Technologies I Work With
+              Tools & Software I Use
             </h3>
             <div className="grid grid-cols-4 md:grid-cols-8 gap-8 max-w-4xl mx-auto">
               {[
-                "React", "TypeScript", "Node.js", "Python", "Docker", "AWS", "PostgreSQL", "MongoDB",
-                "Next.js", "Tailwind", "Express", "Git", "Figma", "VS Code", "Linux", "GraphQL"
-              ].map((tech, index) => (
+                "Premiere Pro", "After Effects", "Photoshop", "Lightroom", "Final Cut", "DaVinci", "Pro Tools", "Logic Pro",
+                "Avid", "Cinema 4D", "Audition", "Illustrator", "Canva", "OBS Studio", "Blender", "Figma"
+              ].map((tool, index) => (
                 <div
-                  key={tech}
+                  key={tool}
                   className="group p-4 bg-card border border-border/50 rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 animate-fade-in hover-scale"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <div className="text-center">
                     <div className="w-8 h-8 mx-auto mb-2 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <span className="text-xs font-semibold text-primary">
-                        {tech.slice(0, 2).toUpperCase()}
+                        {tool.slice(0, 2).toUpperCase()}
                       </span>
                     </div>
                     <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
-                      {tech}
+                      {tool}
                     </span>
                   </div>
                 </div>

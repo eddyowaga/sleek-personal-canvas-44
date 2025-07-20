@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Modern gradient backgrounds */
+    /* Modern gradient backgrounds - Dark theme with indigo accents */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -18,10 +18,10 @@
     --popover: 240 10% 7%;
     --popover-foreground: 0 0% 98%;
 
-    /* Electric blue accent color */
-    --primary: 212 100% 60%;
+    /* Indigo accent color scheme */
+    --primary: 262 83% 58%;
     --primary-foreground: 240 10% 3.9%;
-    --primary-glow: 212 100% 70%;
+    --primary-glow: 262 83% 70%;
 
     /* Subtle secondary colors */
     --secondary: 240 3.7% 15.9%;
@@ -42,7 +42,7 @@
     /* Border and input styling */
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 212 100% 60%;
+    --ring: 262 83% 58%;
 
     --radius: 0.5rem;
 

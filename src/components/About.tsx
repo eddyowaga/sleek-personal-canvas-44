@@ -1,27 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Code2, Palette, Rocket, Users } from "lucide-react";
+import { Camera, Video, Mic, PenTool } from "lucide-react";
 
 const About = () => {
   const highlights = [
     {
-      icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable, and efficient code following best practices."
+      icon: Video,
+      title: "Video Production",
+      description: "Expert in video editing, camera operation, and creating compelling visual narratives."
     },
     {
-      icon: Palette,
-      title: "Modern Design",
-      description: "Creating beautiful user interfaces with attention to detail and user experience."
+      icon: Camera,
+      title: "Photography",
+      description: "Professional photography with DSLR equipment and creative visual composition."
     },
     {
-      icon: Rocket,
-      title: "Performance",
-      description: "Building fast, optimized applications that deliver exceptional performance."
+      icon: Mic,
+      title: "Audio Production",
+      description: "Voice-over recording, sound design, and audio post-production expertise."
     },
     {
-      icon: Users,
-      title: "Collaboration",
-      description: "Working effectively in teams and communicating complex technical concepts."
+      icon: PenTool,
+      title: "Creative Design",
+      description: "Script development, visual design, and comprehensive media production planning."
     }
   ];
 
@@ -43,37 +43,34 @@ const About = () => {
             {/* Left Content */}
             <div className="space-y-6 animate-slide-up">
               <h3 className="text-2xl font-semibold text-foreground">
-                Building the Future, One Line of Code at a Time
+                Creating Stories Through Visual Media
               </h3>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I'm Stanley Aloostanley, a passionate full-stack developer with expertise in 
-                  modern web technologies. I love turning complex problems into simple, 
-                  beautiful, and intuitive solutions.
+                  I'm Stanley Aloo, a passionate Media Technologist currently pursuing my studies at the Kenya Institute of Mass Communication. With a solid foundation in media production and a genuine love for storytelling, I bring creativity and technical expertise to every project I undertake.
                 </p>
                 
                 <p>
-                  With a strong foundation in both frontend and backend development, 
-                  I specialize in React, TypeScript, Node.js, and modern frameworks. 
-                  I'm always eager to learn new technologies and stay up-to-date with 
-                  industry trends.
+                  I specialize in comprehensive media production, from concept to completion. Whether I'm behind the camera capturing the perfect shot, in the editing suite crafting compelling narratives, or setting up professional lighting and sound systems, I approach each project with meticulous attention to detail and creative vision.
                 </p>
                 
                 <p>
-                  When I'm not coding, you can find me exploring new technologies, 
-                  contributing to open-source projects, or sharing knowledge with 
-                  the developer community.
+                  My expertise spans video production and editing, camera operation with both video and DSLR equipment, audio production including voice-over recording and sound design, visual design for impactful graphics, and script development for compelling narratives.
+                </p>
+                
+                <p>
+                  I believe great media production combines technical proficiency with creative storytelling. My bilingual capabilities in English and Swahili allow me to connect with diverse audiences, and I'm always eager to learn new techniques and create something remarkable.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((tech) => (
+                {["Video Editing", "Photography", "Videography", "Script Writing", "Lighting", "Sound Design"].map((skill) => (
                   <span
-                    key={tech}
+                    key={skill}
                     className="px-3 py-1 text-sm bg-primary/10 text-primary border border-primary/20 rounded-full"
                   >
-                    {tech}
+                    {skill}
                   </span>
                 ))}
               </div>

@@ -26,7 +26,7 @@ const Header = () => {
     { label: "About", id: "about" },
     { label: "Skills", id: "skills" },
     { label: "Projects", id: "projects" },
-    { label: "Contact", id: "contact" },
+    { label: "CV", id: "contact" },
   ];
 
   return (
@@ -44,7 +44,7 @@ const Header = () => {
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
           >
-            Stanley
+            Stanley Aloo
           </button>
 
           {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ const Header = () => {
               onClick={() => scrollToSection("contact")}
               className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all"
             >
-              Get In Touch
+              View CV
             </Button>
           </div>
 
@@ -98,7 +98,7 @@ const Header = () => {
                   onClick={() => scrollToSection("contact")}
                   className="w-full bg-gradient-primary"
                 >
-                  Get In Touch
+                  View CV
                 </Button>
               </div>
             </div>

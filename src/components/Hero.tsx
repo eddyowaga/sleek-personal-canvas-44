@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import { ChevronDown, Github, Instagram, Mail, MessageSquare } from "lucide-react";
+import stanleyPhoto from "@/assets/stanley-photo.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -45,8 +45,8 @@ const Hero = () => {
           <div className="mb-8 animate-fade-in">
             <div className="relative mx-auto w-32 h-32 mb-6">
               <img
-                src={profileAvatar}
-                alt="Stanley Aloostanley"
+                src={stanleyPhoto}
+                alt="Stanley Aloo"
                 className="w-full h-full rounded-full object-cover border-4 border-primary/20 shadow-2xl hover-scale"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-pulse-glow"></div>
@@ -56,19 +56,19 @@ const Hero = () => {
           {/* Main Content */}
           <div className="space-y-6 animate-slide-up">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="text-foreground">Hi, I'm </span>
+              <span className="text-foreground">Hello, I'm </span>
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Stanley
+                Stanley Aloo
               </span>
             </h1>
             
             <h2 className="text-2xl md:text-3xl text-primary-glow font-light">
-              Full Stack Developer & Software Engineer
+              Media Technologist & Creative Storyteller
             </h2>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I craft beautiful, functional, and user-friendly digital experiences 
-              using modern technologies and best practices.
+              Producer, video editor, and photographer with a passion for creating 
+              high-quality content and telling stories through visual media.
             </p>
 
             {/* CTA Buttons */}
@@ -88,14 +88,14 @@ const Hero = () => {
                 size="lg"
                 className="border-primary/20 hover:border-primary hover:bg-primary/10 transition-all"
               >
-                Get In Touch
+                View CV
               </Button>
             </div>
 
             {/* Social Links */}
             <div className="flex justify-center space-x-6 pt-8">
               <a
-                href="https://github.com/aloostanley"
+                href="https://github.com/Aloostanley"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
@@ -103,15 +103,23 @@ const Hero = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/in/stanley-aloostanley"
+                href="https://www.instagram.com/stan_creatives_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
               >
-                <Linkedin className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="mailto:stanley@example.com"
+                href="https://api.whatsapp.com/send/?phone=254112036777&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
+              >
+                <MessageSquare className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:your.email@gmail.com"
                 className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
               >
                 <Mail className="h-5 w-5" />

@@ -1,60 +1,38 @@
-import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Download, Github, Instagram, MessageSquare } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
+  const handleCVDownload = () => {
+    // Open CV in new tab
+    window.open("https://drive.google.com/file/d/1vwgxLRlb6aSMhYGwuBJtzSX2jZ4maxD4/view", "_blank");
+    
     toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "CV opened successfully!",
+      description: "You can view and download my CV from Google Drive.",
     });
-
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "stanley@example.com",
-      href: "mailto:stanley@example.com"
+      value: "your.email@gmail.com",
+      href: "mailto:your.email@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+254 112 036 777",
+      href: "tel:+254112036777"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Nairobi, Kenya",
       href: "#"
     }
   ];
@@ -63,20 +41,20 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/aloostanley",
+      href: "https://github.com/Aloostanley",
       color: "hover:text-gray-400"
     },
     {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com/in/stanley-aloostanley",
-      color: "hover:text-blue-400"
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://www.instagram.com/stan_creatives_",
+      color: "hover:text-pink-400"
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/aloostanley",
-      color: "hover:text-blue-400"
+      icon: MessageSquare,
+      label: "WhatsApp",
+      href: "https://api.whatsapp.com/send/?phone=254112036777&text&type=phone_number&app_absent=0",
+      color: "hover:text-green-400"
     }
   ];
 
@@ -87,94 +65,45 @@ const Contact = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+              View My <span className="bg-gradient-primary bg-clip-text text-transparent">CV</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Let's work together to bring your ideas to life
+              Download my CV and let's connect
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* CV Download Section */}
             <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 animate-slide-up">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send me a message</CardTitle>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl">Download My CV</CardTitle>
                 <CardDescription>
-                  Fill out the form below and I'll get back to you as soon as possible.
+                  View my complete professional background, education, and experience.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your name"
-                        required
-                        className="border-border/50 focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="your.email@example.com"
-                        required
-                        className="border-border/50 focus:border-primary"
-                      />
-                    </div>
+              <CardContent className="text-center">
+                <div className="mb-6">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Download className="h-10 w-10 text-primary" />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="What's this about?"
-                      required
-                      className="border-border/50 focus:border-primary"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project..."
-                      required
-                      rows={5}
-                      className="border-border/50 focus:border-primary resize-none"
-                    />
-                  </div>
+                  <p className="text-muted-foreground mb-6">
+                    Get a comprehensive overview of my skills, experience, and achievements in media production and technology.
+                  </p>
+                </div>
 
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all"
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4 mr-2" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
+                <Button
+                  onClick={handleCVDownload}
+                  className="w-full bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all mb-6"
+                  size="lg"
+                >
+                  <Download className="h-5 w-5 mr-2" />
+                  View CV on Google Drive
+                </Button>
+
+                <div className="text-sm text-muted-foreground">
+                  <p>Available in PDF format</p>
+                  <p>Last updated: January 2025</p>
+                </div>
               </CardContent>
             </Card>
 
@@ -183,9 +112,9 @@ const Contact = () => {
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Let's connect</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  I'm always interested in hearing about new opportunities and exciting projects. 
-                  Whether you're a company looking to hire, or you're a fellow developer who 
-                  wants to connect, I'd love to hear from you.
+                  I'm always interested in hearing about new creative projects and collaboration opportunities. 
+                  Whether you need video production, photography services, or want to discuss a creative idea, 
+                  I'd love to hear from you.
                 </p>
               </div>
 

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Instagram, Mail, Heart, MessageSquare } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,17 +6,22 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/aloostanley",
+      href: "https://github.com/Aloostanley",
       label: "GitHub"
     },
     {
-      icon: Linkedin,
-      href: "https://linkedin.com/in/stanley-aloostanley",
-      label: "LinkedIn"
+      icon: Instagram,
+      href: "https://www.instagram.com/stan_creatives_",
+      label: "Instagram"
+    },
+    {
+      icon: MessageSquare,
+      href: "https://api.whatsapp.com/send/?phone=254112036777&text&type=phone_number&app_absent=0",
+      label: "WhatsApp"
     },
     {
       icon: Mail,
-      href: "mailto:stanley@example.com",
+      href: "mailto:your.email@gmail.com",
       label: "Email"
     }
   ];
@@ -36,11 +41,11 @@ const Footer = () => {
                 onClick={scrollToTop}
                 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
               >
-                Stanley Aloostanley
+                Stanley Aloo
               </button>
               <p className="text-muted-foreground leading-relaxed">
-                Full Stack Developer crafting beautiful and functional 
-                digital experiences with modern technologies.
+                Media Technologist crafting compelling stories through 
+                video production, photography, and creative media.
               </p>
             </div>
 
@@ -48,11 +53,12 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Quick Links</h3>
               <div className="space-y-2">
-                {["About", "Skills", "Projects", "Contact"].map((item) => (
+                {["About", "Skills", "Projects", "CV"].map((item) => (
                   <button
                     key={item}
                     onClick={() => {
-                      const element = document.getElementById(item.toLowerCase());
+                      const sectionId = item === "CV" ? "contact" : item.toLowerCase();
+                      const element = document.getElementById(sectionId);
                       element?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="block text-muted-foreground hover:text-primary transition-colors"
@@ -67,18 +73,18 @@ const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Get In Touch</h3>
               <div className="space-y-2 text-muted-foreground">
-                <p>San Francisco, CA</p>
+                <p>Nairobi, Kenya</p>
                 <a
-                  href="mailto:stanley@example.com"
+                  href="mailto:your.email@gmail.com"
                   className="block hover:text-primary transition-colors"
                 >
-                  stanley@example.com
+                  your.email@gmail.com
                 </a>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+254112036777"
                   className="block hover:text-primary transition-colors"
                 >
-                  +1 (555) 123-4567
+                  +254 112 036 777
                 </a>
               </div>
             </div>
@@ -89,9 +95,9 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
               <div className="flex items-center space-x-2 text-muted-foreground">
-                <span>© {currentYear} Stanley Aloostanley. Made with</span>
+                <span>© {currentYear} Stanley Aloo. Made with</span>
                 <Heart className="h-4 w-4 text-red-500 fill-current" />
-                <span>and React</span>
+                <span>and creativity</span>
               </div>
 
               {/* Social Links */}
@@ -114,14 +120,14 @@ const Footer = () => {
             {/* Additional Note */}
             <div className="mt-6 text-center text-sm text-muted-foreground">
               <p>
-                This portfolio is open source and available on{" "}
+                Passionate about creating compelling visual stories and professional media content.{" "}
                 <a
-                  href="https://github.com/aloostanley/portfolio"
+                  href="https://github.com/Aloostanley"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
                 >
-                  GitHub
+                  Follow my work
                 </a>
               </p>
             </div>

@@ -6,55 +6,55 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      liveUrl: "#",
+      title: "The Secret Life of Rabbits",
+      description: "A captivating short documentary exploring the hidden world of rabbits, showcasing their behaviors and natural habitat through cinematic storytelling.",
+      image: "https://img.youtube.com/vi/aKfEZ6sS92k/hqdefault.jpg",
+      technologies: ["Video Editing", "Documentary", "Wildlife", "Cinematography", "Color Grading"],
+      liveUrl: "https://www.youtube.com/watch?v=aKfEZ6sS92k",
       githubUrl: "#",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates, team collaboration features, and comprehensive analytics dashboard.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io", "Tailwind CSS"],
-      liveUrl: "#",
+      title: "The Secret Ingredient",
+      description: "A culinary journey discovering unique cooking techniques and ingredients, featuring professional food photography and engaging narrative structure.",
+      image: "https://img.youtube.com/vi/5uxCYbWLymY/hqdefault.jpg",
+      technologies: ["Food Photography", "Video Production", "Storytelling", "Audio Design"],
+      liveUrl: "https://www.youtube.com/watch?v=5uxCYbWLymY",
       githubUrl: "#",
       featured: true
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["React", "JavaScript", "OpenWeather API", "Chart.js", "CSS3"],
+      title: "Empowering Luo Voices",
+      description: "A powerful documentary highlighting Luo culture and voices, combining traditional storytelling with modern production techniques.",
+      image: "https://img.youtube.com/vi/uj0e5krcWUY/hqdefault.jpg",
+      technologies: ["Cultural Documentation", "Interview Production", "Sound Design", "Community Stories"],
+      liveUrl: "https://www.youtube.com/watch?v=uj0e5krcWUY",
+      githubUrl: "#",
+      featured: false
+    },
+    {
+      title: "Wedding Cinematography",
+      description: "Elegant wedding films capturing precious moments with cinematic quality and emotional storytelling.",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop",
+      technologies: ["Wedding Film", "Drone Footage", "Color Grading", "Audio Mixing"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false
     },
     {
-      title: "Social Media Dashboard",
-      description: "A comprehensive social media management platform with analytics, scheduling, and multi-platform integration.",
-      image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "Python", "Django", "Redis", "PostgreSQL"],
+      title: "Corporate Promotional Video",
+      description: "Professional corporate videos showcasing company culture and services with polished production quality.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+      technologies: ["Corporate Video", "Brand Storytelling", "Professional Lighting", "Motion Graphics"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false
     },
     {
-      title: "Fitness Tracker",
-      description: "A mobile-first fitness application with workout tracking, progress analytics, and social features for motivation.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      technologies: ["React Native", "TypeScript", "Firebase", "Redux", "Expo"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      title: "AI Chat Bot",
-      description: "An intelligent chatbot with natural language processing, context awareness, and integration with multiple platforms.",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop",
-      technologies: ["Python", "TensorFlow", "Flask", "NLP", "Docker"],
+      title: "Music Video Production",
+      description: "Creative music videos with artistic visual effects, synchronized editing, and performance cinematography.",
+      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop",
+      technologies: ["Music Video", "Visual Effects", "Performance Filming", "Creative Editing"],
       liveUrl: "#",
       githubUrl: "#",
       featured: false
@@ -122,11 +122,11 @@ const Projects = () => {
                     <div className="flex gap-3 pt-2">
                       <Button size="sm" className="flex-1 bg-gradient-primary">
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
+                        Watch Video
                       </Button>
                       <Button size="sm" variant="outline" className="flex-1">
                         <Github className="h-4 w-4 mr-2" />
-                        Code
+                        Details
                       </Button>
                     </div>
                   </CardContent>
@@ -179,11 +179,11 @@ const Projects = () => {
                     <div className="flex gap-2">
                       <Button size="sm" variant="outline" className="flex-1 text-xs">
                         <ExternalLink className="h-3 w-3 mr-1" />
-                        Demo
+                        Watch
                       </Button>
                       <Button size="sm" variant="outline" className="flex-1 text-xs">
                         <Github className="h-3 w-3 mr-1" />
-                        Code
+                        Info
                       </Button>
                     </div>
                   </CardContent>
