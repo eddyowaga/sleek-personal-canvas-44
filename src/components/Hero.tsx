@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Github, Instagram, Mail, MessageSquare } from "lucide-react";
-import stanleyPhoto from "@/assets/stanley-profile.jpg";
+import stanleyPhoto from "@/assets/stanley-headphones.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -21,19 +21,23 @@ const Hero = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-soft opacity-90"></div>
       
       {/* Floating particles effect */}
       <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-2 h-2 bg-primary/30 rounded-full animate-float`}
+            className={`absolute rounded-full animate-float`}
             style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`,
-              animationDelay: `${i * 0.5}s`,
-              animationDuration: `${4 + i}s`
+              width: `${8 + i * 2}px`,
+              height: `${8 + i * 2}px`,
+              background: `hsl(${349 + i * 30} 100% ${65 + i * 2}%)`,
+              left: `${15 + i * 12}%`,
+              top: `${25 + i * 8}%`,
+              animationDelay: `${i * 0.7}s`,
+              animationDuration: `${5 + i * 0.5}s`,
+              opacity: 0.6
             }}
           ></div>
         ))}
@@ -43,30 +47,32 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Image */}
           <div className="mb-8 animate-fade-in">
-            <div className="relative mx-auto w-32 h-32 mb-6">
+            <div className="relative mx-auto w-40 h-40 mb-6">
+              <div className="absolute inset-0 rounded-full bg-gradient-rainbow opacity-30 animate-pulse-glow"></div>
               <img
                 src={stanleyPhoto}
                 alt="Stanley Aloo"
-                className="w-full h-full rounded-full object-cover border-4 border-primary/20 shadow-2xl hover-scale"
+                className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-sweet hover-scale z-10"
+                style={{ boxShadow: 'var(--shadow-sweet)' }}
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-pulse-glow"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-10 animate-bounce-soft"></div>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="space-y-6 animate-slide-up">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight">
               <span className="text-foreground">Hello, I'm </span>
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-rainbow bg-clip-text text-transparent">
                 Stanley Aloo
               </span>
             </h1>
             
-            <h2 className="text-2xl md:text-3xl text-primary-glow font-light">
+            <h2 className="text-2xl md:text-3xl font-medium bg-gradient-sweet bg-clip-text text-transparent">
               Media Technologist & Creative Storyteller
             </h2>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed font-medium">
               Producer, video editor, and photographer with a passion for creating 
               high-quality content and telling stories through visual media.
             </p>
@@ -76,7 +82,7 @@ const Hero = () => {
               <Button
                 onClick={() => window.location.href = '/projects'}
                 size="lg"
-                className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all group"
+                className="bg-gradient-rainbow text-white font-semibold hover:scale-105 transition-all group shadow-sweet border-0"
               >
                 View My Work
                 <ChevronDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
@@ -86,7 +92,7 @@ const Hero = () => {
                 onClick={() => scrollToSection("contact")}
                 variant="outline"
                 size="lg"
-                className="border-primary/20 hover:border-primary hover:bg-primary/10 transition-all"
+                className="border-2 border-primary/30 bg-white/50 backdrop-blur-sm text-foreground font-semibold hover:border-primary hover:bg-primary/10 hover:scale-105 transition-all"
               >
                 View CV
               </Button>
@@ -98,31 +104,31 @@ const Hero = () => {
                 href="https://github.com/Aloostanley"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
+                className="p-4 rounded-full bg-white/70 backdrop-blur-sm border-2 border-white/50 hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all shadow-soft"
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-5 w-5 text-foreground" />
               </a>
               <a
                 href="https://www.instagram.com/stan_creatives_"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
+                className="p-4 rounded-full bg-white/70 backdrop-blur-sm border-2 border-white/50 hover:border-primary hover:bg-primary/10 hover:scale-110 transition-all shadow-soft"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-5 w-5 text-foreground" />
               </a>
               <a
                 href="https://api.whatsapp.com/send/?phone=254112036777&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
+                className="p-4 rounded-full bg-white/70 backdrop-blur-sm border-2 border-white/50 hover:border-accent hover:bg-accent/10 hover:scale-110 transition-all shadow-soft"
               >
-                <MessageSquare className="h-5 w-5" />
+                <MessageSquare className="h-5 w-5 text-foreground" />
               </a>
               <a
                 href="mailto:your.email@gmail.com"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-all hover-scale"
+                className="p-4 rounded-full bg-white/70 backdrop-blur-sm border-2 border-white/50 hover:border-secondary hover:bg-secondary/10 hover:scale-110 transition-all shadow-soft"
               >
-                <Mail className="h-5 w-5" />
+                <Mail className="h-5 w-5 text-foreground" />
               </a>
             </div>
           </div>
@@ -133,7 +139,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <button
           onClick={() => scrollToSection("about")}
-          className="p-2 rounded-full border border-primary/20 hover:border-primary transition-colors"
+          className="p-3 rounded-full bg-white/70 backdrop-blur-sm border-2 border-white/50 hover:border-primary hover:scale-110 transition-all shadow-soft"
         >
           <ChevronDown className="h-6 w-6 text-primary" />
         </button>
