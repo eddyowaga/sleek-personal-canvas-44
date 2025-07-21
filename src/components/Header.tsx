@@ -15,18 +15,26 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavigation = (item: { label: string; id: string; href: string }) => {
+    if (item.href === "/projects") {
+      window.location.href = "/projects";
+    } else if (item.href === "/") {
+      if (window.location.pathname !== "/") {
+        window.location.href = "/";
+      } else {
+        const element = document.getElementById(item.id);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
     setIsMobileMenuOpen(false);
   };
 
   const navItems = [
-    { label: "Home", id: "hero" },
-    { label: "About", id: "about" },
-    { label: "Skills", id: "skills" },
-    { label: "Projects", id: "projects" },
-    { label: "CV", id: "contact" },
+    { label: "Home", id: "hero", href: "/" },
+    { label: "About", id: "about", href: "/" },
+    { label: "Skills", id: "skills", href: "/" },
+    { label: "Projects", id: "projects", href: "/projects" },
+    { label: "CV", id: "contact", href: "/" },
   ];
 
   return (
@@ -41,7 +49,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection("hero")}
+            onClick={() => window.location.href = "/"}
             className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
           >
             Stanley Aloo
@@ -52,7 +60,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavigation(item)}
                 className="text-muted-foreground hover:text-primary transition-colors relative group"
               >
                 {item.label}
@@ -64,7 +72,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => window.location.pathname === "/" ? document.getElementById("contact")?.scrollIntoView({ behavior: 'smooth' }) : window.location.href = "/"}
               className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all"
             >
               View CV
@@ -87,7 +95,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => handleNavigation(item)}
                   className="text-muted-foreground hover:text-primary transition-colors px-4 py-2 text-left"
                 >
                   {item.label}
@@ -95,7 +103,10 @@ const Header = () => {
               ))}
               <div className="px-4 pt-2">
                 <Button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.location.pathname === "/" ? document.getElementById("contact")?.scrollIntoView({ behavior: 'smooth' }) : window.location.href = "/"
+                  }}
                   className="w-full bg-gradient-primary"
                 >
                   View CV

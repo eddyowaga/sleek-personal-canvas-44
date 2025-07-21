@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Github, Instagram, Mail, MessageSquare } from "lucide-react";
-import stanleyPhoto from "@/assets/stanley-photo.jpg";
+import stanleyPhoto from "@/assets/stanley-profile.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -74,7 +74,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => window.location.href = '/projects'}
                 size="lg"
                 className="bg-gradient-primary hover:shadow-lg hover:shadow-primary/20 transition-all group"
               >
