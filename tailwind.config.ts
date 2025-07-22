@@ -19,8 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Poppins', 'sans-serif'],
-				heading: ['DM Sans', 'sans-serif'],
+				sans: ['Fredoka', 'ui-sans-serif', 'system-ui'],
+				fredoka: ['Fredoka', 'sans-serif'],
+				heading: ['Fredoka', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -10,19 +10,49 @@ const Projects = () => {
       id: "aKfEZ6sS92k",
       title: "The Secret Life of Rabbits",
       description: "A captivating documentary exploring the hidden world of rabbits and their natural behaviors.",
-      category: "Documentary"
+      category: "Documentary",
+      type: "youtube"
     },
     {
       id: "5uxCYbWLymY", 
       title: "The Secret Ingredient",
       description: "A culinary journey uncovering the secret ingredients that make traditional dishes special.",
-      category: "Food Documentary"
+      category: "Food Documentary",
+      type: "youtube"
     },
     {
       id: "uj0e5krcWUY",
       title: "Empowering Luo Voices",
       description: "A powerful documentary showcasing the stories and voices of the Luo community.",
-      category: "Cultural Documentary"
+      category: "Cultural Documentary",
+      type: "youtube"
+    },
+    {
+      id: "corporate-video-1",
+      title: "Corporate Brand Story",
+      description: "A professional brand storytelling video showcasing company values and vision.",
+      category: "Corporate",
+      type: "local",
+      videoUrl: "/videos/corporate-brand.mp4",
+      thumbnail: "/videos/thumbnails/corporate-brand.jpg"
+    },
+    {
+      id: "wedding-highlights",
+      title: "Wedding Highlights Reel",
+      description: "Beautiful wedding cinematography capturing the most precious moments of the special day.",
+      category: "Wedding",
+      type: "local",
+      videoUrl: "/videos/wedding-highlights.mp4",
+      thumbnail: "/videos/thumbnails/wedding-highlights.jpg"
+    },
+    {
+      id: "music-video-1",
+      title: "Local Artist Music Video",
+      description: "Creative music video production featuring local talent with dynamic visuals and storytelling.",
+      category: "Music Video",
+      type: "local",
+      videoUrl: "/videos/music-video.mp4",
+      thumbnail: "/videos/thumbnails/music-video.jpg"
     }
   ];
 
@@ -60,7 +90,10 @@ const Projects = () => {
             <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 bg-card border-border">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
-                  src={`https://img.youtube.com/vi/${project.id}/hqdefault.jpg`}
+                  src={project.type === 'youtube' 
+                    ? `https://img.youtube.com/vi/${project.id}/hqdefault.jpg`
+                    : project.thumbnail || '/placeholder.svg'
+                  }
                   alt={`${project.title} Thumbnail`}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -81,15 +114,33 @@ const Projects = () => {
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                <a
-                  href={`https://www.youtube.com/watch?v=${project.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary hover:text-primary-glow transition-colors"
-                >
-                  Watch on YouTube
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+                {project.type === 'youtube' ? (
+                  <a
+                    href={`https://www.youtube.com/watch?v=${project.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-primary-glow transition-colors"
+                  >
+                    Watch on YouTube
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                ) : (
+                  <div className="space-y-3">
+                    {project.videoUrl && (
+                      <video
+                        controls
+                        className="w-full rounded-lg"
+                        poster={project.thumbnail}
+                      >
+                        <source src={project.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
+                    <p className="text-sm text-muted-foreground">
+                      Offline Project • Watch directly here
+                    </p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
