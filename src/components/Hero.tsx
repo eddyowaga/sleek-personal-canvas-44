@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="relative mx-auto w-40 h-40 mb-6">
               <div className="absolute inset-0 rounded-full bg-gradient-rainbow opacity-30 animate-pulse-glow"></div>
               <img
-                src={stanleyPhoto}
+                src="/lovable-uploads/1ded3875-6101-4586-9222-f19662d8242f.png"
                 alt="Stanley Aloo"
                 className="relative w-full h-full rounded-full object-cover border-4 border-white shadow-sweet hover-scale z-10"
                 style={{ boxShadow: 'var(--shadow-sweet)' }}
